@@ -14,6 +14,7 @@ class CareerStatsSerializer(serializers.ModelSerializer):
     stolen_base_pct = serializers.ReadOnlyField()
     home_run_rate = serializers.ReadOnlyField()
     plate_appearances = serializers.ReadOnlyField()
+    hits_per_game = serializers.ReadOnlyField()
 
     class Meta:
         model = CareerStats
@@ -33,7 +34,7 @@ class CareerStatsSerializer(serializers.ModelSerializer):
             'singles', 'total_bases', 'extra_base_hits',
             'power_speed_number', 'isolated_power',
             'walk_to_strikeout_ratio', 'stolen_base_pct',
-            'home_run_rate', 'plate_appearances',
+            'home_run_rate', 'plate_appearances', 'hits_per_game',
             # Timestamps
             'created_at', 'updated_at'
         ]
@@ -74,6 +75,12 @@ class PlayerListSerializer(serializers.ModelSerializer):
         decimal_places=3,
         read_only=True
     )
+    hits_per_game = serializers.DecimalField(
+        source='career_stats.hits_per_game',
+        max_digits=5,
+        decimal_places=3,
+        read_only=True
+    )
 
     class Meta:
         model = Player
@@ -84,7 +91,8 @@ class PlayerListSerializer(serializers.ModelSerializer):
             'position_display',
             'home_runs',
             'batting_avg',
-            'ops'
+            'ops',
+            'hits_per_game',
         ]
 
 

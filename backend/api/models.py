@@ -160,6 +160,15 @@ class CareerStats(models.Model):
         if self.at_bats == 0:
             return 0
         return round((self.home_runs / self.at_bats) * 100, 2)
+    
+    @property
+    def hits_per_game(self):
+        """Average of hits per game"""
+        if not self.hits > 0:
+            return 0
+        
+        return self.hits / self.games
+
 
     @property
     def plate_appearances(self):

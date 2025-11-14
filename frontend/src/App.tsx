@@ -27,7 +27,7 @@ function App() {
         {/* Home Run Leaders */}
         <HomeRunLeaders refreshKey={refreshKey} onPlayerUpdated={handlePlayerUpdated} />
         {/* Players Table */}
-        <PlayersTable limit={10} refreshKey={refreshKey} onPlayerUpdated={handlePlayerUpdated} />
+        <PlayersTable limit={100} refreshKey={refreshKey} onPlayerUpdated={handlePlayerUpdated} />
       </main>
 
       {/* Footer */}

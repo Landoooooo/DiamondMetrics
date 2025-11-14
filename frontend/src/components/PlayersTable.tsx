@@ -207,6 +207,24 @@ export function PlayersTable({ limit = 20, refreshKey, onPlayerUpdated }: Player
         <div className="font-mono font-semibold">{row.getValue('ops')}</div>
       ),
     },
+    {
+      accessorKey: "hits_per_game",
+      header: ({ column }) => {
+        return (
+          <div
+            className="flex items-center cursor-pointer hover:text-foreground"
+            onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
+          >
+            Hits Per Game
+            {column.getIsSorted() && (
+              <span className="ml-2">
+                {column.getIsSorted() === 'asc' ? '↑' : '↓'}
+              </span>
+            )}
+          </div>
+        );
+      }
+    }
   ];
 
   const table = useReactTable({
