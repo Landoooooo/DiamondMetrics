@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Dodger Blue Theme */
+    --background: 0 0% 100%;
+    --foreground: 210 40% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 40% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 40% 20%;
+
+    --primary: 207 100% 31%; /* Dodger Blue #005A9C */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 200 9% 67%; /* Dodger Light Blue #A5ACAF */
+    --secondary-foreground: 210 40% 20%;
+
+    --muted: 200 9% 67%;
+    --muted-foreground: 210 20% 40%;
+
+    --accent: 3 89% 60%; /* Dodger Red #EF3E42 */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 200 9% 85%;
+    --input: 200 9% 85%;
+    --ring: 207 100% 31%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 210 40% 8%;
+    --foreground: 0 0% 95%;
+
+    --card: 210 40% 10%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 210 40% 10%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 207 100% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 200 9% 30%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 200 9% 20%;
+    --muted-foreground: 200 9% 65%;
+
+    --accent: 3 89% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 200 9% 20%;
+    --input: 200 9% 20%;
+    --ring: 207 100% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
